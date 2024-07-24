@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 웹사이트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #35424a;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        button {
+            background-color: #35424a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2c3840;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>환영합니다</h1>
+    </header>
+    <main>
+        <h2>기본 웹사이트입니다</h2>
+        <p>이것은 HTML, CSS, 그리고 JavaScript를 사용하여 만든 간단한 웹사이트입니다.</p>
+        <button id="changeColorBtn">배경색 변경</button>
+    </main>
+    <script>
+        const changeColorBtn = document.getElementById('changeColorBtn');
+        const main = document.querySelector('main');
+        
+        changeColorBtn.addEventListener('click', function() {
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            main.style.backgroundColor = "#" + randomColor;
+        });
+    </script>
+</body>
+</html>
